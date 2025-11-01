@@ -11,38 +11,43 @@
 </head>
 <body>
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-background">
-              <!-- 🌥️ NUBES -->
-              <div class="clouds">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="cloud cloud-4"></div>
-              </div>
-              <!-- partículas existentes -->
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-            </div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text fade-in">
-                <div class="hero-badge">
-                    <i class="fas fa-cloud"></i>
-                    <span>Cloud Enthusiast</span>
-                </div>
-                <h1 class="hero-title">
-                    Transformando ideas en <span class="gradient-text">soluciones cloud</span> escalables
-                </h1>
-                <p class="hero-description">
-                    Especialista en ingeniería cloud y soluciones empresariales. 
-                    Ayudo a empresas a migrar, optimizar y escalar sus infraestructuras en la nube.
-                </p>
+                <section id="hero" class="hero">
+                  <div class="hero-background" style="position: absolute; inset: 0; z-index: 0;">
+                    <!-- 🌥️ NUBES (DEBUG ON) -->
+                    <div class="clouds" style="position:absolute; inset:0; background:rgba(255,0,0,0.2); z-index:5;">
+                      <div class="cloud cloud-1"></div>
+                      <div class="cloud cloud-2"></div>
+                      <div class="cloud cloud-3"></div>
+                      <div class="cloud cloud-4"></div>
+                    </div>
                 
+                    <!-- partículas existentes -->
+                    <div class="particles-container" id="particles" style="z-index:10;"></div>
+                    <div class="floating-shapes" style="z-index:10;">
+                      <div class="shape shape-1"></div>
+                      <div class="shape shape-2"></div>
+                      <div class="shape shape-3"></div>
+                      <div class="shape shape-4"></div>
+                    </div>
+                  </div>
+                
+                  <div class="hero-content" style="position: relative; z-index: 20;">
+                    <div class="hero-text fade-in">
+                      <div class="hero-badge">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Enthusiast</span>
+                      </div>
+                      <h1 class="hero-title">
+                        Transformando ideas en <span class="gradient-text">soluciones cloud</span> escalables
+                      </h1>
+                      <p class="hero-description">
+                        Especialista en ingeniería cloud y soluciones empresariales.
+                        Ayudo a empresas a migrar, optimizar y escalar sus infraestructuras en la nube.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
                 <!-- Personal Presentation within Hero -->
                 <div class="hero-presentation">
                     <div class="profile-image-container">
