@@ -1499,14 +1499,16 @@ p {
   left: 0;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    ellipse at bottom,
-    rgba(255, 255, 255, 0.25),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.2), transparent 70%);
   animation: cloudParallax 60s linear infinite;
   z-index: 0;
 }
+
+@keyframes cloudParallax {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}
+
 
 /* CONTENEDOR DE NUBES */
 .clouds {
