@@ -105,9 +105,9 @@ body {
     gap: var(--space-lg);
     margin: var(--space-xl) 0;
     padding: var(--space-lg);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-xl);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -252,7 +252,7 @@ p {
 }
 
 .btn-outline:hover {
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
