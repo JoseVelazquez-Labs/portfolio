@@ -11,108 +11,102 @@
 </head>
 <body>
     <!-- Hero Section -->
-                <section id="hero" class="hero">
-                  <div class="hero-background" style="position: absolute; inset: 0; z-index: 0;">
-                    <!-- 🌥️ NUBES (DEBUG ON) -->
-                    <div class="clouds" style="position:absolute; inset:0; background:rgba(255,0,0,0.2); z-index:5;">
-                      <div class="cloud cloud-1"></div>
-                      <div class="cloud cloud-2"></div>
-                      <div class="cloud cloud-3"></div>
-                      <div class="cloud cloud-4"></div>
-                    </div>
-                
-                    <!-- partículas existentes -->
-                    <div class="particles-container" id="particles" style="z-index:10;"></div>
-                    <div class="floating-shapes" style="z-index:10;">
-                      <div class="shape shape-1"></div>
-                      <div class="shape shape-2"></div>
-                      <div class="shape shape-3"></div>
-                      <div class="shape shape-4"></div>
-                    </div>
-                  </div>
-                
-                  <div class="hero-content" style="position: relative; z-index: 20;">
-                    <div class="hero-text fade-in">
-                      <div class="hero-badge">
-                        <i class="fas fa-cloud"></i>
-                        <span>Cloud Enthusiast</span>
-                      </div>
-                      <h1 class="hero-title">
-                        Transformando ideas en <span class="gradient-text">soluciones cloud</span> escalables
-                      </h1>
-                      <p class="hero-description">
-                        Especialista en ingeniería cloud y soluciones empresariales.
-                        Ayudo a empresas a migrar, optimizar y escalar sus infraestructuras en la nube.
-                      </p>
-                    </div>
-                  </div>
-
-                <!-- Personal Presentation within Hero -->
-                <div class="hero-presentation">
-                    <div class="profile-image-container">
-                        <img src="images/jose_velazquez.png" alt="José Velázquez" class="profile-image">
-                        <div class="profile-border"></div>
-                    </div>
-                    <div class="profile-info">
-                        <h2 class="profile-name">José Velázquez</h2>
-                        <p class="profile-title">Cloud Enthusiast </p>
-                    </div>
-                </div>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary btn-lg" onclick="scrollToSection('projects')">
-                        <i class="fas fa-rocket"></i>
-                        Ver Proyectos
-                    </button>
-                    <button class="btn btn-outline btn-lg" onclick="scrollToSection('contact')">
-                        <i class="fas fa-envelope"></i>
-                        Contactar
-                    </button>
-                </div>
+        <section id="hero" class="hero">
+          <div class="hero-background">
+            <!-- 🌥️ NUBES -->
+            <div class="clouds">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+              <div class="cloud cloud-4"></div>
             </div>
+        
+            <!-- Partículas y formas flotantes -->
+            <div class="particles-container" id="particles"></div>
+            <div class="floating-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+              <div class="shape shape-4"></div>
+            </div>
+          </div>
+        
+          <div class="hero-content">
+            <div class="hero-text fade-in">
+              <div class="hero-badge">
+                <i class="fas fa-cloud"></i>
+                <span>Cloud Enthusiast</span>
+              </div>
+        
+              <h1 class="hero-title">
+                Transformando ideas en <span class="gradient-text">soluciones cloud</span> escalables
+              </h1>
+        
+              <p class="hero-description">
+                Especialista en ingeniería cloud y soluciones empresariales.
+                Ayudo a empresas a migrar, optimizar y escalar sus infraestructuras en la nube.
+              </p>
+        
+              <div class="hero-presentation">
+                <div class="profile-image-container">
+                  <img src="imagenes/joan_amengual.jpg" alt="José Velázquez" class="profile-image">
+                  <div class="profile-border"></div>
+                </div>
+                <div class="profile-info">
+                  <h2 class="profile-name">José Velázquez</h2>
+                  <p class="profile-title">Cloud Enthusiast</p>
+                </div>
+              </div>
+        
+              <div class="hero-buttons">
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('projects')">
+                  <i class="fas fa-rocket"></i>
+                  Ver Proyectos
+                </button>
+                <button class="btn btn-outline btn-lg" onclick="scrollToSection('contact')">
+                  <i class="fas fa-envelope"></i>
+                  Contactar
+                </button>
+              </div>
+            </div>
+        
             <div class="hero-visual fade-in-delay">
-                <div class="floating-card">
-                    <div class="card-header">
-                        <div class="card-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="code-snippet">
-                            <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudEngineer</span> {</div>
-                            <div class="code-line">  <span class="keyword">constructor</span>() {</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
-                            <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
-                            <div class="code-line">    ];</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
-                            <div class="code-line">  }</div>
-                            <div class="code-line">}</div>
-                        </div>
-                    </div>
+              <div class="floating-card">
+                <div class="card-header">
+                  <div class="card-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
-                <div class="tech-stack">
-                    <div class="tech-item" data-tech="AWS">
-                        <i class="fab fa-aws"></i>
+                <div class="card-content">
+                  <div class="code-snippet">
+                    <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudEngineer</span> {</div>
+                    <div class="code-line">  <span class="keyword">constructor</span>() {</div>
+                    <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
+                    <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
+                    <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
+                    <div class="code-line">    ];</div>
+                    <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
+                    <div class="code-line">  }</div>
+                    <div class="code-line">}</div>
+                  </div>
                 </div>
-                    <div class="tech-item" data-tech="Docker">
-                        <i class="fab fa-docker"></i>
+              </div>
+              <div class="tech-stack">
+                <div class="tech-item" data-tech="AWS"><i class="fab fa-aws"></i></div>
+                <div class="tech-item" data-tech="Docker"><i class="fab fa-docker"></i></div>
+                <div class="tech-item" data-tech="Kubernetes"><i class="fas fa-cube"></i></div>
+              </div>
             </div>
-                    <div class="tech-item" data-tech="Kubernetes">
-                        <i class="fas fa-cube"></i>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator" onclick="scrollToSection('projects')">
+          </div>
+        
+          <div class="scroll-indicator" onclick="scrollToSection('projects')">
             <div class="scroll-text">Desliza para explorar</div>
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
+            <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+          </div>
+        </section>
+
 
 
 
