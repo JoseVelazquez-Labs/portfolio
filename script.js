@@ -279,7 +279,7 @@ function initializeParticles() {
             position: absolute;
             width: ${Math.random() * 4 + 2}px;
             height: ${Math.random() * 4 + 2}px;
-            background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+            background: rgba(255, 255, 255, ${Math.random() * 0.15 + 0.05});
             border-radius: 50%;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
