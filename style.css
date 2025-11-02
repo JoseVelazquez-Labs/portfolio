@@ -479,32 +479,45 @@ p {
 }
 
 .tech-stack {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    display: flex;
-    gap: var(--space-sm);
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;     /* ← permite múltiples iconos en varias columnas */
+  z-index: 3;          /* ← por si quedaban detrás de algo */
 }
 
 .tech-item {
-    width: 50px;
-    height: 50px;
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size-xl);
-    color: var(--text-primary);
-    box-shadow: var(--shadow-lg);
-    transition: all var(--transition-normal);
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.tech-item i {
+  font-size: 24px;   /* ← homogeneiza FA + Devicon */
+  line-height: 1;    /* ← evita que “baile” verticalmente */
+  display: block;
 }
 
 .tech-item:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: var(--shadow-xl);
     color: var(--primary-color);
+}
+
+/* 5) Ajuste en móvil para que no invada */
+@media (max-width: 768px) {
+  .tech-item { width: 44px; height: 44px; }
+  .tech-item i { font-size: 20px; }
 }
 
 .scroll-indicator {
