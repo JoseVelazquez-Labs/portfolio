@@ -1475,70 +1475,8 @@ p {
     .project-image {
         height: 160px;
     }
-    /* =========================================================
-   ☁️ Pixel-Clouds Parallax + Brand Gradient (clean)
-   ========================================================= */
-
-/* Color con más personalidad (indigo → azul → cian) */
-.hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1e40af 42%, #06b6d4 100%);
-  background-size: 220% 220%;
-  animation: gradientShift 24s ease-in-out infinite;
 }
-
-/* Capas de nubes (por detrás de partículas y shapes) */
-.cloud-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 0;                /* detrás de partículas/shapes */
-  pointer-events: none;
-  background-repeat: repeat-x;
-  background-position: 0 65%;
-  image-rendering: pixelated; /* mantiene estética pixel-art */
-  opacity: 0.35;
-  transform: translateZ(0);   /* fuerza aceleración HW */
-}
-
-.cloud-back {
-  background-image: url("imagenes/clouds/clouds-back.png");
-  animation: cloudDriftBack 120s linear infinite;
-  background-size: 800px auto;  /* ajusta según tu PNG */
-  opacity: 0.28;                 /* más sutil (lejano)   */
-}
-
-.cloud-front {
-  background-image: url("imagenes/clouds/clouds-front.png");
-  animation: cloudDriftFront 60s linear infinite;
-  background-size: 1000px auto;
-  background-position-y: 72%;
-  opacity: 0.42;
-}
-
-/* Parallax suave: distinta velocidad por capa */
-@keyframes cloudDriftBack {
-  from { background-position-x: 0; }
-  to   { background-position-x: -1600px; }
-}
-@keyframes cloudDriftFront {
-  from { background-position-x: 0; }
-  to   { background-position-x: -2000px; }
-}
-
-/* Integra mejor con tus partículas */
-.particles-container { opacity: 0.25; } /* era ~0.1-1.0 vía inline; lo unificamos */
-
-@media (max-width: 1024px) {
-  .cloud-front { opacity: 0.33; animation-duration: 80s; }
-  .cloud-back  { opacity: 0.24; animation-duration: 140s; }
-}
-
-/* Respeta usuarios con reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .cloud-layer { animation: none !important; }
-  .hero { animation: none !important; }
-}
-}
-/* Capas de nubes pixel-art */
+/* === Pixel clouds === */
 .cloud-layer {
   position: absolute;
   inset: 0;
@@ -1546,20 +1484,20 @@ p {
   pointer-events: none;
   background-repeat: repeat-x;
   background-position: 0 65%;
-  image-rendering: pixelated; /* se vea pixel-art de verdad */
+  image-rendering: pixelated; /* mantiene look pixel-art */
   opacity: 0.35;
   transform: translateZ(0);
 }
 
 .cloud-back {
-  background-image: url("images/clouds-back.png"); /* ⇦ AQUÍ APUNTA AL PNG */
+  background-image: url("imagenes/clouds/clouds-back.png");
   background-size: 800px auto;
   animation: cloudDriftBack 120s linear infinite;
   opacity: 0.28;
 }
 
 .cloud-front {
-  background-image: url("images/clouds-front.png"); /* ⇦ AQUÍ APUNTA AL PNG */
+  background-image: url("imagenes/clouds/clouds-front.png");
   background-size: 1000px auto;
   background-position-y: 72%;
   animation: cloudDriftFront 60s linear infinite;
@@ -1574,3 +1512,4 @@ p {
   from { background-position-x: 0; }
   to   { background-position-x: -2000px; }
 }
+
