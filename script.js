@@ -268,27 +268,30 @@ function showNotification(message, type = 'info') {
 
 // Initialize particles
 function initializeParticles() {
-    if (!particlesContainer) return;
-    
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 4 + 2}px;
-            height: ${Math.random() * 4 + 2}px;
-            background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
-            border-radius: 50%;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-            animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
-            animation-delay: ${Math.random() * 5}s;
-        `;
-        particlesContainer.appendChild(particle);
-    }
+  if (!particlesContainer) return;
+
+  // ↓↓↓ CAMBIO AQUÍ ↓↓↓
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const particleCount = isMobile ? 18 : 36;
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.cssText = `
+      position: absolute;
+      width: ${Math.random() * 4 + 2}px;
+      height: ${Math.random() * 4 + 2}px;
+      background: rgba(255, 255, 255, ${Math.random() * 0.15 + 0.05}); /* opcional: más sutil */
+      border-radius: 50%;
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
+      animation-delay: ${Math.random() * 5}s;
+    `;
+    particlesContainer.appendChild(particle);
+  }
 }
+
 
 // Initialize tech stack interactions
 function initializeTechStack() {
