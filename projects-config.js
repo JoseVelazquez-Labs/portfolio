@@ -51,7 +51,7 @@ const projects = [
         github: "#",
         demo: "#"
     },
-    {
+    /* {
         id: 2,
         title: "Aplicación Web con Angular desplegada en AWS",
         description: "Muestra cómo servir sitios web estáticos o SPA en la nube",
@@ -138,7 +138,8 @@ const projects = [
         tags: ["Profesional"],
         github: "#",
         demo: "#"
-    }
+    } 
+*/
 ];
 
 // Exportar para uso en script.js
