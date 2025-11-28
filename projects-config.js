@@ -49,7 +49,7 @@ const projects = [
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center (SSO)", "Service Control Policies (SCP)"],
         tags: ["Profesional"],
         github: "https://github.com/JoseVelazquez-Labs/aws-organization",
-        demo: "#"
+       // demo: "#"
     },
      {
         id: 2,
@@ -60,7 +60,7 @@ const projects = [
         technologies: ["Amazon S3", "CloudFront", "Route 53", "Certificate Manager"],
         tags: ["Básico"],
         github: "#",
-        demo: "#"
+        // demo: "#"
     },
     /* {
         id: 3,
