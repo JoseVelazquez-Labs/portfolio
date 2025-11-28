@@ -135,7 +135,7 @@ function initializeModal() {
     
     // Close modal with escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
+        if (e.key === 'Escape' && modal.style.display === 'block') { 
             closeModal();
         }
     });
@@ -151,7 +151,7 @@ function openModal(project) {
     const modalDescription = document.getElementById('modalDescription');
     const modalTechnologies = document.getElementById('modalTechnologies');
     const modalGithub = document.getElementById('modalGithub');
-    const modalDemo = document.getElementById('modalDemo');
+    // const modalDemo = document.getElementById('modalDemo');
     
     modalTitle.textContent = project.title;
     modalImage.src = project.image;
@@ -174,12 +174,12 @@ function openModal(project) {
         }
     };
     
-    modalDemo.onclick = function(e) {
-        if (this.href === '#') {
-            e.preventDefault();
-            alert('Enlace no disponible');
-            return false;
-        }
+  //  modalDemo.onclick = function(e) {
+     //   if (this.href === '#') {
+       //     e.preventDefault();
+        //    alert('Enlace no disponible');
+       //     return false;
+     //   }
     };
     
     modal.style.display = 'block';
