@@ -84,10 +84,10 @@ function createProjectCard(project) {
                     <i class="fab fa-github"></i>
                     Ver Código
                 </a>
-                <a href="${project.demo}" target="_blank" class="project-link secondary" onclick="event.stopPropagation(); if(this.href === '#') { alert('Enlace no disponible'); return false; }">
-                    <i class="fas fa-external-link-alt"></i>
-                    Ver Demo
-                </a>
+                // <a href="${project.demo}" target="_blank" class="project-link secondary" onclick="event.stopPropagation(); if(this.href === '#') { alert('Enlace no disponible'); return false; }">
+               //     <i class="fas fa-external-link-alt"></i>
+                //    Ver Demo
+               // </a>
             </div>
         </div>
     `;
