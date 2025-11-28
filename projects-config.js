@@ -51,9 +51,9 @@ const projects = [
         github: "https://github.com/JoseVelazquez-Labs/aws-organization",
         demo: "#"
     },
-    /* {
+     {
         id: 2,
-        title: "Aplicación Web con Angular desplegada en AWS",
+        title: "Próximamente: Aplicación Web con Angular desplegada en AWS...",
         description: "Muestra cómo servir sitios web estáticos o SPA en la nube",
         fullDescription: "Sitio web estático Angular alojado en Amazon S3, distribuido globalmente con CloudFront y protegido con HTTPS mediante AWS Certificate Manager.",
         image: "images/App_Web_Desplegada_AWS.jpg",
@@ -62,7 +62,7 @@ const projects = [
         github: "#",
         demo: "#"
     },
-    {
+    /* {
         id: 3,
         title: "Arquitectura ECS",
         description: "Enfocado en orquestación, escalabilidad y arquitectura de microservicios",
