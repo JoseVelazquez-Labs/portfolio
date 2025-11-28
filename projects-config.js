@@ -47,7 +47,7 @@ const projects = [
         fullDescription: "Arquitectura multi cuenta con AWS Organizations, ideal para separar entornos, controlar facturación y aplicar políticas centralizadas de seguridad y acceso.",
         image: "images/AWS-Organization.jpg",
         technologies: ["AWS Organizations", "IAM", "IAM Identity Center (SSO)", "Service Control Policies (SCP)"],
-       // tags: ["Profesional"],
+        tags: ["Profesional"],
         github: "https://github.com/JoseVelazquez-Labs/aws-organization",
         //demo: "#"
     },
