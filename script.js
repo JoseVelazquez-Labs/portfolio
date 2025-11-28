@@ -163,7 +163,7 @@ function openModal(project) {
     ).join('');
     
     modalGithub.href = project.github;
-    modalDemo.href = project.demo;
+    // modalDemo.href = project.demo;
     
     // Add click handlers for modal buttons
     modalGithub.onclick = function(e) {
@@ -180,7 +180,7 @@ function openModal(project) {
         //    alert('Enlace no disponible');
        //     return false;
      //   }
-    };
+   // };
     
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
