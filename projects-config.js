@@ -46,10 +46,10 @@ const projects = [
         description: "Proyecto centrado en la gestión de cuentas AWS con buenas prácticas organizativas",
         fullDescription: "Arquitectura multi cuenta con AWS Organizations, ideal para separar entornos, controlar facturación y aplicar políticas centralizadas de seguridad y acceso.",
         image: "images/AWS_Organization.jpg",
-        technologies: ["AWS Organizations", "IAM", "CloudTrail", "Config"],
+        technologies: ["AWS Organizations", "IAM", "IAM Identity Center (SSO)", "Service Control Policies (SCP)"],
         tags: ["Profesional"],
-        github: "#",
-        demo: "#"
+        github: "https://github.com/JoseVelazquez-Labs/aws-organization",
+        /* demo: "#" 
     },
     /* {
         id: 2,
