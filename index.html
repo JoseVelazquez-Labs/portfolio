@@ -23,49 +23,68 @@
 
             <svg class="cloud-defs" aria-hidden="true" focusable="false">
                 <defs>
-                    <linearGradient id="cloudGradient" x1="0%" y1="18%" x2="0%" y2="100%">
+                    <radialGradient id="cloudCore" cx="42%" cy="40%" r="60%">
                         <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
-                        <stop offset="58%" stop-color="#e8f4ff" stop-opacity="0.92" />
-                        <stop offset="100%" stop-color="#cfe4f7" stop-opacity="0.82" />
-                    </linearGradient>
-                    <linearGradient id="cloudShade" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#9cc8e4" stop-opacity="0.34" />
-                        <stop offset="100%" stop-color="#8dbad8" stop-opacity="0" />
-                    </linearGradient>
-                    <radialGradient id="cloudHighlight" cx="36%" cy="34%" r="58%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
-                        <stop offset="68%" stop-color="#ffffff" stop-opacity="0.42" />
-                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                        <stop offset="55%" stop-color="#f5fbff" stop-opacity="0.9" />
+                        <stop offset="100%" stop-color="#d0e8fb" stop-opacity="0.6" />
                     </radialGradient>
-                    <symbol id="cloud-shape" viewBox="0 0 420 240">
-                        <path class="cloud-body" fill="url(#cloudGradient)" d="M104 172c0-34 28-62 62-62 10.4 0 20.4 2.4 29.5 6.9C205 73 243 50 286 50c43 0 80 30 88 70h13c30 0 54 24 54 54s-24 54-54 54H104c-33 0-60-25-60-56s27-56 60-56z" />
-                        <path class="cloud-highlight" fill="url(#cloudHighlight)" d="M124 148c0-22 18-40 40-40 6 0 12 1.4 17.5 3.8C198 92 232 72 270 72c34 0 62 24 68 56h10c24 0 44 18 44 40s-20 40-44 40H124c-22 0-40-18-40-40s18-40 40-40z" />
-                        <path class="cloud-shade" fill="url(#cloudShade)" d="M70 198c16-14 36-22 58-22h274c-10 24-36 40-62 40H120c-20 0-38-7-50-18z" />
-                        <path class="cloud-vapor" d="M-30 194c96-36 210-4 302 28 54 20 134 34 186 12" />
+                    <radialGradient id="cloudHalo" cx="50%" cy="55%" r="80%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+                        <stop offset="70%" stop-color="#b8e6ff" stop-opacity="0.08" />
+                        <stop offset="100%" stop-color="#9ed5f5" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="cloudShade" x1="50%" y1="20%" x2="50%" y2="100%">
+                        <stop offset="0%" stop-color="#b9d9f0" stop-opacity="0.38" />
+                        <stop offset="100%" stop-color="#7aa9cc" stop-opacity="0.05" />
+                    </linearGradient>
+                    <filter id="cloudBlur" x="-14%" y="-18%" width="128%" height="136%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <symbol id="cloud-shape" viewBox="0 0 360 200">
+                        <g class="cloud-shape">
+                            <g class="puff puff-1" transform="translate(24 48)">
+                                <ellipse class="cloud-puff" cx="86" cy="62" rx="82" ry="56" />
+                                <ellipse class="cloud-shade" cx="86" cy="86" rx="88" ry="44" />
+                            </g>
+                            <g class="puff puff-2" transform="translate(116 28)">
+                                <ellipse class="cloud-puff" cx="96" cy="72" rx="92" ry="66" />
+                                <ellipse class="cloud-shade" cx="94" cy="102" rx="102" ry="46" />
+                            </g>
+                            <g class="puff puff-3" transform="translate(186 52)">
+                                <ellipse class="cloud-puff" cx="86" cy="62" rx="78" ry="52" />
+                                <ellipse class="cloud-shade" cx="88" cy="90" rx="90" ry="42" />
+                            </g>
+                            <ellipse class="cloud-halo" cx="176" cy="110" rx="210" ry="92" />
+                            <ellipse class="cloud-mist" cx="186" cy="124" rx="240" ry="104" />
+                        </g>
                     </symbol>
                 </defs>
             </svg>
 
             <div class="cloud-layer layer-back">
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
             <div class="cloud-layer layer-mid">
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
             <div class="cloud-layer layer-front">
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
 
             <div class="particles-container" id="particles"></div>
@@ -106,50 +125,50 @@
                     </button>
                 </div>
             </div>
-            <div class="hero-visual fade-in-delay">
-                <div class="floating-card">
-                    <div class="card-header">
-                        <div class="card-dots">
-                            <span></span>
+                <div class="hero-visual fade-in-delay">
+                    <div class="floating-card">
+                        <div class="card-header">
+                            <div class="card-dots">
+                                <span></span>
                             <span></span>
                             <span></span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="code-snippet">
-                            <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudComputing</span> {</div>
-                            <div class="code-line">  <span class="keyword">constructor</span>() {</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
-                            <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
-                            <div class="code-line">    ];</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
-                            <div class="code-line">  }</div>
-                            <div class="code-line">}</div>
+                            <div class="code-snippet">
+                                <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudComputing</span> {</div>
+                                <div class="code-line">  <span class="keyword">constructor</span>() {</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
+                                <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
+                                <div class="code-line">    ];</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
+                                <div class="code-line">  }</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <div class="tech-item" data-tech="AWS">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Azure" title="Azure">
+                            <i class="devicon-azure-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Docker">
+                            <i class="devicon-docker-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Kubernetes">
+                            <i class="devicon-kubernetes-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Terraform" title="Terraform">
+                            <i class="devicon-terraform-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Linux" title="Linux">
+                            <i class="devicon-linux-plain"></i>
                         </div>
                     </div>
                 </div>
-                <div class="tech-stack">
-                    <div class="tech-item" data-tech="AWS">
-                        <i class="fab fa-aws"></i>
-                </div>
-                    <div class="tech-item" data-tech="Azure" title="Azure">
-                          <i class="devicon-azure-plain"></i>
-                    </div>
-                    <div class="tech-item" data-tech="Docker">
-                        <i class="devicon-docker-plain"></i>
-            </div>
-                    <div class="tech-item" data-tech="Kubernetes">
-                        <i class="devicon-kubernetes-plain"></i>
-                </div>
-                    <div class="tech-item" data-tech="Terraform" title="Terraform">
-                          <i class="devicon-terraform-plain"></i>
-                    </div>
-                     <div class="tech-item" data-tech="Linux" title="Linux">
-                          <i class="devicon-linux-plain"></i>
-                  </div>
-                </div>
-            </div>
         </div>
         <div class="scroll-indicator" onclick="scrollToSection('projects')">
             <div class="scroll-text">Desliza para explorar</div>
