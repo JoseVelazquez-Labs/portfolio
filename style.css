@@ -294,12 +294,12 @@ p {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, #0668d6 0%, #0c96d4 26%, #10bfd5 48%, #2ddae8 66%, #84ecf7 82%, #d9fbff 100%),
-        radial-gradient(140% 120% at 30% 18%, rgba(42, 203, 255, 0.22), rgba(42, 203, 255, 0)),
-        radial-gradient(120% 110% at 70% 76%, rgba(12, 143, 180, 0.18), rgba(12, 143, 180, 0));
+        linear-gradient(180deg, #0277c7 0%, #0597d6 28%, #0bc1df 56%, #3ae5f4 74%, #a6f3ff 88%, #e4fbff 100%),
+        radial-gradient(140% 120% at 30% 18%, rgba(52, 210, 255, 0.26), rgba(37, 203, 220, 0)),
+        radial-gradient(120% 110% at 70% 76%, rgba(8, 143, 182, 0.16), rgba(12, 150, 177, 0));
     background-blend-mode: screen, screen;
     background-size: 140% 140%, 120% 120%, 140% 140%;
-    animation: skyPulse 22s ease-in-out infinite;
+    animation: skyPulse 26s ease-in-out infinite;
 }
 
 .hero::before {
@@ -429,17 +429,17 @@ p {
 }
 
 .layer-back {
-    opacity: 0.32;
-    filter: blur(1.4px);
+    opacity: 0.34;
+    filter: blur(1.2px);
 }
 
 .layer-mid {
-    opacity: 0.5;
-    filter: blur(0.6px);
+    opacity: 0.54;
+    filter: blur(0.5px);
 }
 
 .layer-front {
-    opacity: 0.68;
+    opacity: 0.72;
 }
 
 .cloud {
@@ -447,11 +447,11 @@ p {
     width: 320px;
     height: auto;
     filter:
-        drop-shadow(0 16px 24px rgba(12, 78, 110, 0.16))
-        drop-shadow(0 24px 40px rgba(7, 64, 92, 0.12));
+        drop-shadow(0 14px 30px rgba(79, 168, 204, 0.18))
+        drop-shadow(0 20px 40px rgba(47, 131, 168, 0.12));
     animation: cloudDrift var(--cloud-duration, 68s) linear infinite;
     transform: translateZ(0);
-    opacity: 0.9;
+    opacity: 0.88;
     --start-x: -120%;
     --end-x: 120%;
     --cloud-scale: 1;
@@ -461,14 +461,15 @@ p {
 
 .cloud use { filter: url(#cloudBlur); }
 
-.cloud .cloud-shape { transform-origin: 50% 60%; }
+.cloud .cloud-shape { transform-origin: 50% 60%; mix-blend-mode: screen; }
 
 .cloud .puff {
-    animation: cloudMorph 24s ease-in-out infinite;
+    animation: cloudMorph 26s ease-in-out infinite;
 }
 
-.cloud .puff-2 { animation-delay: 6s; }
-.cloud .puff-3 { animation-delay: 12s; }
+.cloud .puff-2 { animation-delay: 5s; }
+.cloud .puff-3 { animation-delay: 10s; }
+.cloud .puff-4 { animation-delay: 15s; }
 
 .cloud .cloud-puff {
     fill: url(#cloudCore);
@@ -477,20 +478,20 @@ p {
 
 .cloud .cloud-shade {
     fill: url(#cloudShade);
-    opacity: 0.6;
-    filter: blur(1px);
+    opacity: 0.38;
+    filter: blur(1.4px);
 }
 
 .cloud .cloud-halo {
     fill: url(#cloudHalo);
     mix-blend-mode: screen;
-    opacity: 0.82;
+    opacity: 0.7;
 }
 
 .cloud .cloud-mist {
     fill: url(#cloudHalo);
-    opacity: 0.22;
-    filter: blur(18px);
+    opacity: 0.25;
+    filter: blur(22px);
 }
 
 .cloud.reverse {
@@ -498,23 +499,23 @@ p {
     --end-x: -120%;
 }
 
-.layer-back .cloud:nth-child(1) { width: 240px; top: 10%; left: 4%; --cloud-duration: 108s; --cloud-scale: 0.9; opacity: 0.32; filter: blur(2.2px); }
-.layer-back .cloud:nth-child(2) { width: 220px; top: 30%; left: 22%; --cloud-duration: 116s; --cloud-scale: 0.86; opacity: 0.3; filter: blur(2.4px); }
-.layer-back .cloud:nth-child(3) { width: 250px; top: 46%; left: 46%; --cloud-duration: 112s; --cloud-scale: 0.92; opacity: 0.34; filter: blur(2px); }
-.layer-back .cloud:nth-child(4) { width: 230px; top: 64%; left: 70%; --cloud-duration: 120s; --cloud-scale: 0.88; opacity: 0.32; filter: blur(2.6px); }
-.layer-back .cloud:nth-child(5) { width: 210px; top: 82%; left: 86%; --cloud-duration: 126s; --cloud-scale: 0.84; opacity: 0.28; filter: blur(2.8px); }
+.layer-back .cloud:nth-child(1) { width: 220px; top: 8%; left: 6%; --cloud-duration: 128s; --cloud-scale: 0.88; opacity: 0.32; filter: blur(2.2px); animation-delay: -8s; }
+.layer-back .cloud:nth-child(2) { width: 210px; top: 26%; left: 24%; --cloud-duration: 132s; --cloud-scale: 0.86; opacity: 0.3; filter: blur(2.3px); animation-delay: -16s; }
+.layer-back .cloud:nth-child(3) { width: 230px; top: 44%; left: 52%; --cloud-duration: 124s; --cloud-scale: 0.9; opacity: 0.33; filter: blur(2.1px); animation-delay: -4s; }
+.layer-back .cloud:nth-child(4) { width: 210px; top: 62%; left: 74%; --cloud-duration: 138s; --cloud-scale: 0.84; opacity: 0.3; filter: blur(2.5px); animation-delay: -20s; }
+.layer-back .cloud:nth-child(5) { width: 200px; top: 78%; left: 12%; --cloud-duration: 142s; --cloud-scale: 0.82; opacity: 0.28; filter: blur(2.7px); animation-delay: -12s; }
 
-.layer-mid .cloud:nth-child(1) { width: 300px; top: 14%; left: 12%; --cloud-duration: 82s; --cloud-scale: 0.98; filter: blur(1.3px); }
-.layer-mid .cloud:nth-child(2) { width: 340px; top: 32%; left: 38%; --cloud-duration: 86s; --cloud-scale: 1.02; filter: blur(1.1px); }
-.layer-mid .cloud:nth-child(3) { width: 320px; top: 50%; left: 8%; --cloud-duration: 90s; --cloud-scale: 1; filter: blur(1px); }
-.layer-mid .cloud:nth-child(4) { width: 360px; top: 68%; left: 58%; --cloud-duration: 84s; --cloud-scale: 1.04; filter: blur(0.9px); }
-.layer-mid .cloud:nth-child(5) { width: 300px; top: 86%; left: 26%; --cloud-duration: 88s; --cloud-scale: 0.96; filter: blur(1.1px); }
+.layer-mid .cloud:nth-child(1) { width: 300px; top: 12%; left: 16%; --cloud-duration: 96s; --cloud-scale: 0.96; filter: blur(1.1px); animation-delay: -6s; }
+.layer-mid .cloud:nth-child(2) { width: 340px; top: 30%; left: 40%; --cloud-duration: 90s; --cloud-scale: 1.02; filter: blur(1px); animation-delay: -14s; }
+.layer-mid .cloud:nth-child(3) { width: 320px; top: 48%; left: 10%; --cloud-duration: 92s; --cloud-scale: 0.98; filter: blur(0.9px); animation-delay: -2s; }
+.layer-mid .cloud:nth-child(4) { width: 360px; top: 66%; left: 62%; --cloud-duration: 86s; --cloud-scale: 1.04; filter: blur(0.9px); animation-delay: -18s; }
+.layer-mid .cloud:nth-child(5) { width: 300px; top: 84%; left: 32%; --cloud-duration: 94s; --cloud-scale: 0.94; filter: blur(1px); animation-delay: -10s; }
 
-.layer-front .cloud:nth-child(1) { width: 360px; top: 18%; left: 30%; --cloud-duration: 66s; --cloud-scale: 1.02; }
-.layer-front .cloud:nth-child(2) { width: 400px; top: 38%; left: 6%; --cloud-duration: 60s; --cloud-scale: 1.06; }
-.layer-front .cloud:nth-child(3) { width: 360px; top: 58%; left: 72%; --cloud-duration: 56s; --cloud-scale: 1; }
-.layer-front .cloud:nth-child(4) { width: 340px; top: 74%; left: 42%; --cloud-duration: 62s; --cloud-scale: 0.98; }
-.layer-front .cloud:nth-child(5) { width: 360px; top: 88%; left: 16%; --cloud-duration: 64s; --cloud-scale: 1.02; }
+.layer-front .cloud:nth-child(1) { width: 360px; top: 16%; left: 8%; --cloud-duration: 74s; --cloud-scale: 1; animation-delay: -6s; }
+.layer-front .cloud:nth-child(2) { width: 420px; top: 34%; left: 26%; --cloud-duration: 66s; --cloud-scale: 1.06; animation-delay: -12s; }
+.layer-front .cloud:nth-child(3) { width: 360px; top: 54%; left: 72%; --cloud-duration: 64s; --cloud-scale: 1.02; animation-delay: -4s; }
+.layer-front .cloud:nth-child(4) { width: 340px; top: 70%; left: 44%; --cloud-duration: 68s; --cloud-scale: 0.98; animation-delay: -16s; }
+.layer-front .cloud:nth-child(5) { width: 380px; top: 86%; left: 20%; --cloud-duration: 72s; --cloud-scale: 1; animation-delay: -10s; }
 
 .particles-container {
     position: absolute;
@@ -543,8 +544,8 @@ p {
     inset: 8% 6% auto 2%;
     height: 84%;
     background:
-        radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.08)),
-        radial-gradient(ellipse at 80% 60%, rgba(14, 138, 166, 0.28), rgba(14, 138, 166, 0));
+        radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.12)),
+        radial-gradient(ellipse at 80% 60%, rgba(14, 138, 166, 0.24), rgba(14, 138, 166, 0));
     filter: blur(18px);
     z-index: 0;
 }
@@ -615,15 +616,15 @@ p {
     position: relative;
     padding: calc(var(--space-xl) + 4px);
     background:
-        linear-gradient(155deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.32)),
-        radial-gradient(100% 100% at 12% 18%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+        linear-gradient(155deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.48)),
+        radial-gradient(100% 100% at 12% 18%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
     border-radius: var(--radius-2xl);
-    border: 1px solid rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.92);
     box-shadow:
-        0 26px 72px rgba(8, 73, 103, 0.28),
-        0 18px 44px rgba(5, 49, 71, 0.24),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(22px) saturate(150%);
+        0 26px 72px rgba(8, 73, 103, 0.32),
+        0 18px 44px rgba(5, 49, 71, 0.26),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(22px) saturate(170%);
     overflow: hidden;
     z-index: 1;
 }
@@ -756,8 +757,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 82%;
-  height: 82%;
+  width: 78%;
+  height: 78%;
+  max-width: 78%;
+  max-height: 78%;
   transform: translateZ(0);
 }
 
@@ -1480,16 +1483,16 @@ p {
 
 @keyframes cloudMorph {
     0% {
-        transform: translateY(0) scale(1) skewX(0deg);
+        transform: translateY(0) scale(1) scaleX(1) skewX(0deg);
     }
     40% {
-        transform: translateY(-4px) scale(1.04) skewX(0.6deg);
+        transform: translateY(-5px) scale(1.06) scaleX(1.02) skewX(0.8deg);
     }
     70% {
-        transform: translateY(3px) scale(0.98) skewX(-0.4deg);
+        transform: translateY(4px) scale(0.96) scaleX(0.98) skewX(-0.6deg);
     }
     100% {
-        transform: translateY(0) scale(1) skewX(0deg);
+        transform: translateY(0) scale(1) scaleX(1) skewX(0deg);
     }
 }
 

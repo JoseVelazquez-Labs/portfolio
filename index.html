@@ -23,43 +23,44 @@
 
             <svg class="cloud-defs" aria-hidden="true" focusable="false">
                 <defs>
-                    <radialGradient id="cloudCore" cx="42%" cy="40%" r="60%">
+                    <radialGradient id="cloudCore" cx="46%" cy="44%" r="62%">
                         <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
-                        <stop offset="55%" stop-color="#f5fbff" stop-opacity="0.9" />
-                        <stop offset="100%" stop-color="#d0e8fb" stop-opacity="0.6" />
+                        <stop offset="48%" stop-color="#ecf8ff" stop-opacity="0.94" />
+                        <stop offset="100%" stop-color="#cce6f8" stop-opacity="0.62" />
                     </radialGradient>
-                    <radialGradient id="cloudHalo" cx="50%" cy="55%" r="80%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
-                        <stop offset="70%" stop-color="#b8e6ff" stop-opacity="0.08" />
-                        <stop offset="100%" stop-color="#9ed5f5" stop-opacity="0" />
+                    <radialGradient id="cloudHalo" cx="48%" cy="60%" r="88%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32" />
+                        <stop offset="70%" stop-color="#bde9ff" stop-opacity="0.12" />
+                        <stop offset="100%" stop-color="#8bd6ff" stop-opacity="0" />
                     </radialGradient>
-                    <linearGradient id="cloudShade" x1="50%" y1="20%" x2="50%" y2="100%">
-                        <stop offset="0%" stop-color="#b9d9f0" stop-opacity="0.38" />
-                        <stop offset="100%" stop-color="#7aa9cc" stop-opacity="0.05" />
+                    <linearGradient id="cloudShade" x1="40%" y1="20%" x2="60%" y2="100%">
+                        <stop offset="0%" stop-color="#b7d7f2" stop-opacity="0.42" />
+                        <stop offset="100%" stop-color="#8cb7d9" stop-opacity="0.08" />
                     </linearGradient>
-                    <filter id="cloudBlur" x="-14%" y="-18%" width="128%" height="136%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                    <filter id="cloudBlur" x="-18%" y="-18%" width="136%" height="136%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
                         <feMerge>
                             <feMergeNode in="blur" />
                             <feMergeNode in="SourceGraphic" />
                         </feMerge>
                     </filter>
-                    <symbol id="cloud-shape" viewBox="0 0 360 200">
+                    <symbol id="cloud-shape" viewBox="0 0 420 220">
                         <g class="cloud-shape">
-                            <g class="puff puff-1" transform="translate(24 48)">
-                                <ellipse class="cloud-puff" cx="86" cy="62" rx="82" ry="56" />
-                                <ellipse class="cloud-shade" cx="86" cy="86" rx="88" ry="44" />
+                            <g class="puff puff-1" transform="translate(18 64)">
+                                <ellipse class="cloud-puff" cx="96" cy="62" rx="94" ry="58" />
                             </g>
-                            <g class="puff puff-2" transform="translate(116 28)">
-                                <ellipse class="cloud-puff" cx="96" cy="72" rx="92" ry="66" />
-                                <ellipse class="cloud-shade" cx="94" cy="102" rx="102" ry="46" />
+                            <g class="puff puff-2" transform="translate(112 34)">
+                                <ellipse class="cloud-puff" cx="104" cy="70" rx="108" ry="70" />
                             </g>
-                            <g class="puff puff-3" transform="translate(186 52)">
-                                <ellipse class="cloud-puff" cx="86" cy="62" rx="78" ry="52" />
-                                <ellipse class="cloud-shade" cx="88" cy="90" rx="90" ry="42" />
+                            <g class="puff puff-3" transform="translate(222 68)">
+                                <ellipse class="cloud-puff" cx="88" cy="58" rx="92" ry="60" />
                             </g>
-                            <ellipse class="cloud-halo" cx="176" cy="110" rx="210" ry="92" />
-                            <ellipse class="cloud-mist" cx="186" cy="124" rx="240" ry="104" />
+                            <g class="puff puff-4" transform="translate(152 92)">
+                                <ellipse class="cloud-puff" cx="132" cy="68" rx="126" ry="58" />
+                            </g>
+                            <ellipse class="cloud-shade" cx="206" cy="138" rx="228" ry="76" />
+                            <ellipse class="cloud-halo" cx="206" cy="126" rx="262" ry="98" />
+                            <ellipse class="cloud-mist" cx="210" cy="138" rx="280" ry="110" />
                         </g>
                     </symbol>
                 </defs>
