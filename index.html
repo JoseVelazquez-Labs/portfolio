@@ -13,14 +13,68 @@
 <body>
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-background">
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+            <div class="hero-background">
+            <div class="sky-haze"></div>
+            <div class="haze-overlay"></div>
+            <div class="sun-glow">
+                <span class="sun-core"></span>
+                <span class="sun-rays"></span>
             </div>
+
+            <svg class="cloud-defs" aria-hidden="true" focusable="false">
+                <defs>
+                    <radialGradient id="cloudCore" cx="40%" cy="38%" r="64%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
+                        <stop offset="55%" stop-color="#f8fbff" stop-opacity="0.82" />
+                        <stop offset="100%" stop-color="#d7e9f6" stop-opacity="0.68" />
+                    </radialGradient>
+                    <radialGradient id="cloudGlow" cx="50%" cy="50%" r="80%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+                        <stop offset="75%" stop-color="#b9e4f6" stop-opacity="0.08" />
+                        <stop offset="100%" stop-color="#9ad4ed" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="cloudShadow" x1="50%" y1="0%" x2="50%" y2="100%">
+                        <stop offset="0%" stop-color="#b1d4ec" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#7fb3d4" stop-opacity="0" />
+                    </linearGradient>
+                    <filter id="cloudBlur" x="-12%" y="-12%" width="124%" height="124%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <symbol id="cloud-shape" viewBox="0 0 360 200">
+                        <g class="cloud-shape">
+                            <path class="cloud-body" fill="url(#cloudCore)" d="M82 144c-16-4-28-20-28-38 0-21 17-38 38-38 5 0 10 .8 15 2.6C113 46 143 26 176 29c26 2.5 47 18 56 39 4-1 8-1.4 12-1.4 30 0 54 24 54 54s-24 54-54 54H116c-17 0-31-10-34-24-1.7 0-3.3-.1-4.9-.3z" />
+                            <path class="cloud-shadow" fill="url(#cloudShadow)" d="M54 156c18-12 40-18 62-18h186c-10 22-32 36-58 36H108c-20 0-38-7-54-18z" />
+                            <ellipse class="cloud-glow" fill="url(#cloudGlow)" cx="160" cy="118" rx="160" ry="76" />
+                            <ellipse class="cloud-mist" cx="188" cy="138" rx="210" ry="90" />
+                        </g>
+                    </symbol>
+                </defs>
+            </svg>
+
+            <div class="cloud-layer layer-back">
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-mid">
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-front">
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+
+            <div class="particles-container" id="particles"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
@@ -116,6 +170,46 @@
 
 
     <!-- Projects Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Sobre mí</span>
+                </div>
+                <h2 class="section-title">Plataformas fiables orientadas al negocio</h2>
+                <p class="section-subtitle">Me muevo entre la operación diaria y la ingeniería de plataforma: estandarizo, automatizo y observo para que las aplicaciones escalen sin fricciones.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Operación 24/7</h3>
+                    <p>Gestión de entornos críticos en Linux y Windows con foco en fiabilidad, parchado y continuidad.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Automatización</h3>
+                    <p>Diseño pipelines y scripts para reducir tareas manuales, alineando seguridad y cumplimiento.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad aplicativa</h3>
+                    <p>Controlo accesos con IAM, identidades federadas y segmentación de redes en entornos híbridos.</p>
+                </div>
+            </div>
+
+            <div class="skill-badges">
+                <span class="badge">Cloud híbrido (AWS + Azure)</span>
+                <span class="badge">Infraestructura como código</span>
+                <span class="badge">Containers & Kubernetes</span>
+                <span class="badge">Observabilidad con Grafana Stack</span>
+                <span class="badge">Gobernanza multi cuenta</span>
+                <span class="badge">Resiliencia y cost optimization</span>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
