@@ -23,69 +23,57 @@
 
             <svg class="cloud-defs" aria-hidden="true" focusable="false">
                 <defs>
-                    <radialGradient id="cloudCore" cx="46%" cy="44%" r="62%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
-                        <stop offset="48%" stop-color="#ecf8ff" stop-opacity="0.94" />
-                        <stop offset="100%" stop-color="#cce6f8" stop-opacity="0.62" />
+                    <radialGradient id="cloudCore" cx="50%" cy="42%" r="70%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+                        <stop offset="52%" stop-color="#ecf7ff" stop-opacity="0.9" />
+                        <stop offset="100%" stop-color="#c9e6ff" stop-opacity="0.55" />
                     </radialGradient>
-                    <radialGradient id="cloudHalo" cx="48%" cy="60%" r="88%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32" />
-                        <stop offset="70%" stop-color="#bde9ff" stop-opacity="0.12" />
-                        <stop offset="100%" stop-color="#8bd6ff" stop-opacity="0" />
+                    <radialGradient id="cloudHalo" cx="48%" cy="60%" r="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+                        <stop offset="70%" stop-color="#b5e4ff" stop-opacity="0.12" />
+                        <stop offset="100%" stop-color="#7ad8ff" stop-opacity="0" />
                     </radialGradient>
-                    <linearGradient id="cloudShade" x1="40%" y1="20%" x2="60%" y2="100%">
-                        <stop offset="0%" stop-color="#b7d7f2" stop-opacity="0.42" />
-                        <stop offset="100%" stop-color="#8cb7d9" stop-opacity="0.08" />
-                    </linearGradient>
+                    <radialGradient id="cloudShade" cx="46%" cy="58%" r="70%">
+                        <stop offset="0%" stop-color="#b6d9f2" stop-opacity="0.28" />
+                        <stop offset="100%" stop-color="#7da8c8" stop-opacity="0.08" />
+                    </radialGradient>
                     <filter id="cloudBlur" x="-18%" y="-18%" width="136%" height="136%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
                         <feMerge>
                             <feMergeNode in="blur" />
                             <feMergeNode in="SourceGraphic" />
                         </feMerge>
                     </filter>
-                    <symbol id="cloud-shape" viewBox="0 0 420 220">
+                    <filter id="cloudFeather" x="-25%" y="-25%" width="150%" height="150%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+                    </filter>
+                    <symbol id="cloud-shape" viewBox="0 0 420 240" preserveAspectRatio="xMidYMid meet">
                         <g class="cloud-shape">
-                            <g class="puff puff-1" transform="translate(18 64)">
-                                <ellipse class="cloud-puff" cx="96" cy="62" rx="94" ry="58" />
-                            </g>
-                            <g class="puff puff-2" transform="translate(112 34)">
-                                <ellipse class="cloud-puff" cx="104" cy="70" rx="108" ry="70" />
-                            </g>
-                            <g class="puff puff-3" transform="translate(222 68)">
-                                <ellipse class="cloud-puff" cx="88" cy="58" rx="92" ry="60" />
-                            </g>
-                            <g class="puff puff-4" transform="translate(152 92)">
-                                <ellipse class="cloud-puff" cx="132" cy="68" rx="126" ry="58" />
-                            </g>
-                            <ellipse class="cloud-shade" cx="206" cy="138" rx="228" ry="76" />
-                            <ellipse class="cloud-halo" cx="206" cy="126" rx="262" ry="98" />
-                            <ellipse class="cloud-mist" cx="210" cy="138" rx="280" ry="110" />
+                            <path class="cloud-base" d="M126 192h166c43 0 78-31 78-70 0-30-20-57-50-66-5-31-36-56-74-56-28 0-54 14-66 36-8-4-17-6-26-6-35 0-64 25-64 58 0 5 0 10 2 15-27 9-46 33-46 62 0 29 24 52 56 52z" />
+                            <path class="cloud-highlight" d="M140 154c-14 0-26-8-31-21-3-7-4-14-4-21 0-30 23-55 55-55 9 0 18 2 26 5 3-20 19-36 40-40 28-6 55 12 61 40 1 5 2 10 2 15 18 0 34 11 39 27 6 17-2 36-17 45-10 6-22 9-33 9H140z" />
+                            <ellipse class="cloud-fog" cx="210" cy="188" rx="212" ry="60" />
                         </g>
                     </symbol>
                 </defs>
             </svg>
 
             <div class="cloud-layer layer-back">
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
             <div class="cloud-layer layer-mid">
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
             <div class="cloud-layer layer-front">
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
-                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
 
             <div class="particles-container" id="particles"></div>
