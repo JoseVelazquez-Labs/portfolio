@@ -270,7 +270,13 @@ function showNotification(message, type = 'info') {
 // Initialize particles
 function initializeParticles() {
     if (!particlesContainer) return;
-    
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        particlesContainer.style.display = 'none';
+        return;
+    }
+
     const particleCount = 30;
     
     for (let i = 0; i < particleCount; i++) {
