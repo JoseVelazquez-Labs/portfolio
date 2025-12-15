@@ -294,12 +294,12 @@ p {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(180deg, #0378c5 0%, #0499d1 18%, #05b8d9 42%, #0fcde2 60%, #48dff0 76%, #b8f2ff 96%),
-        radial-gradient(140% 120% at 28% 18%, rgba(94, 223, 255, 0.45), rgba(37, 203, 220, 0)),
-        radial-gradient(120% 110% at 72% 78%, rgba(12, 140, 180, 0.3), rgba(12, 150, 177, 0));
+        linear-gradient(180deg, #0273c0 0%, #028ccf 16%, #04a9de 38%, #15c3e5 58%, #3bd8ef 76%, #aef2ff 98%),
+        radial-gradient(140% 120% at 28% 18%, rgba(121, 230, 255, 0.36), rgba(37, 203, 220, 0)),
+        radial-gradient(120% 110% at 72% 78%, rgba(8, 141, 184, 0.32), rgba(12, 150, 177, 0));
     background-blend-mode: screen, screen;
-    background-size: 140% 140%, 120% 120%, 140% 140%;
-    animation: skyPulse 36s ease-in-out infinite;
+    background-size: 150% 150%, 130% 130%, 150% 150%;
+    animation: skyPulse 48s ease-in-out infinite;
 }
 
 .hero::before {
@@ -307,9 +307,9 @@ p {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 22% 18%, rgba(108, 220, 255, 0.42), rgba(37, 203, 220, 0)),
-        radial-gradient(ellipse at 58% 96%, rgba(9, 136, 178, 0.36), rgba(12, 150, 177, 0)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 44%, rgba(255, 255, 255, 0) 82%);
+        radial-gradient(circle at 22% 18%, rgba(159, 238, 255, 0.46), rgba(37, 203, 220, 0)),
+        radial-gradient(ellipse at 58% 96%, rgba(12, 146, 186, 0.32), rgba(12, 150, 177, 0)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 44%, rgba(255, 255, 255, 0) 82%);
     opacity: 0.94;
     pointer-events: none;
 }
@@ -324,10 +324,10 @@ p {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 42% 22%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0)),
+        radial-gradient(ellipse at 42% 22%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0)),
         linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.08) 34%, rgba(255, 255, 255, 0) 100%);
     mix-blend-mode: screen;
-    opacity: 0.82;
+    opacity: 0.86;
     filter: blur(1.5px);
 }
 
@@ -335,9 +335,9 @@ p {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(120% 90% at 48% 64%, rgba(111, 213, 237, 0.22), rgba(111, 213, 237, 0)),
-        linear-gradient(180deg, rgba(7, 126, 170, 0.18) 0%, rgba(7, 126, 170, 0.12) 42%, rgba(7, 126, 170, 0) 78%);
-    opacity: 0.86;
+        radial-gradient(120% 90% at 48% 64%, rgba(141, 229, 246, 0.22), rgba(141, 229, 246, 0)),
+        linear-gradient(180deg, rgba(7, 126, 170, 0.2) 0%, rgba(7, 126, 170, 0.12) 42%, rgba(7, 126, 170, 0) 78%);
+    opacity: 0.9;
     filter: blur(5px);
     pointer-events: none;
 }
@@ -444,6 +444,9 @@ p {
 
 .cloud {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 360px;
     height: auto;
     filter:
@@ -452,17 +455,38 @@ p {
     animation: cloudDrift var(--cloud-duration, 82s) linear infinite;
     transform: translateZ(0);
     opacity: var(--cloud-opacity, 0.9);
-    --start-offset: -160vw;
-    --end-offset: 160vw;
+    --start-offset: -180vw;
+    --end-offset: 180vw;
     --cloud-scale: 1;
     --cloud-opacity: 0.92;
 }
 
-.cloud use { pointer-events: none; }
+.cloud svg { width: 100%; height: auto; display: block; }
 
-.cloud use { filter: url(#cloudBlur); }
+.cloud use { pointer-events: none; filter: url(#cloudBlur); }
 
 .cloud .cloud-shape { transform-origin: 50% 65%; mix-blend-mode: screen; }
+
+.cloud-logo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.cloud-logo i {
+    font-size: 42px;
+    color: #1c3f5a;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    height: 48%;
+}
 
 .cloud .cloud-base {
     fill: url(#cloudCore);
@@ -472,38 +496,41 @@ p {
 
 .cloud .cloud-highlight {
     fill: url(#cloudShade);
-    filter: blur(1.2px);
-    opacity: 0.7;
+    filter: blur(1px);
+    opacity: 0.54;
     animation: cloudMorph 32s ease-in-out infinite;
 }
 
 .cloud .cloud-fog {
     fill: url(#cloudHalo);
-    opacity: 0.32;
-    filter: blur(18px);
+    opacity: 0.26;
+    filter: blur(16px);
     transform-origin: 50% 60%;
     animation: cloudBreathe 30s ease-in-out infinite;
 }
 
 .cloud.reverse {
-    --start-offset: 160vw;
-    --end-offset: -160vw;
+    --start-offset: 180vw;
+    --end-offset: -180vw;
 }
 
-.layer-back .cloud:nth-child(1) { width: 240px; top: 10%; left: 4%; --cloud-duration: 142s; --cloud-scale: 0.82; opacity: 0.3; filter: blur(2.6px); animation-delay: -10s; }
-.layer-back .cloud:nth-child(2) { width: 260px; top: 28%; left: 22%; --cloud-duration: 138s; --cloud-scale: 0.86; opacity: 0.32; filter: blur(2.4px); animation-delay: -26s; }
-.layer-back .cloud:nth-child(3) { width: 250px; top: 52%; left: 58%; --cloud-duration: 134s; --cloud-scale: 0.84; opacity: 0.3; filter: blur(2.5px); animation-delay: -6s; }
-.layer-back .cloud:nth-child(4) { width: 240px; top: 76%; left: 10%; --cloud-duration: 146s; --cloud-scale: 0.82; opacity: 0.28; filter: blur(2.8px); animation-delay: -18s; }
+ .layer-back .cloud:nth-child(1) { width: 240px; top: 8%; left: 4%; --cloud-duration: 150s; --cloud-scale: 0.82; opacity: 0.34; filter: blur(2.6px); animation-delay: -10s; }
+ .layer-back .cloud:nth-child(2) { width: 250px; top: 24%; left: 20%; --cloud-duration: 144s; --cloud-scale: 0.86; opacity: 0.3; filter: blur(2.4px); animation-delay: -26s; }
+ .layer-back .cloud:nth-child(3) { width: 230px; top: 42%; left: 54%; --cloud-duration: 140s; --cloud-scale: 0.84; opacity: 0.3; filter: blur(2.5px); animation-delay: -6s; }
+ .layer-back .cloud:nth-child(4) { width: 240px; top: 62%; left: 12%; --cloud-duration: 152s; --cloud-scale: 0.82; opacity: 0.28; filter: blur(2.8px); animation-delay: -18s; }
+ .layer-back .cloud:nth-child(5) { width: 250px; top: 80%; left: 70%; --cloud-duration: 148s; --cloud-scale: 0.86; opacity: 0.3; filter: blur(2.5px); animation-delay: -32s; }
 
-.layer-mid .cloud:nth-child(1) { width: 320px; top: 14%; left: 14%; --cloud-duration: 104s; --cloud-scale: 0.94; filter: blur(1.2px); animation-delay: -8s; }
-.layer-mid .cloud:nth-child(2) { width: 340px; top: 36%; left: 46%; --cloud-duration: 96s; --cloud-scale: 1.02; filter: blur(1px); animation-delay: -22s; }
-.layer-mid .cloud:nth-child(3) { width: 330px; top: 60%; left: 20%; --cloud-duration: 100s; --cloud-scale: 0.98; filter: blur(1px); animation-delay: -4s; }
-.layer-mid .cloud:nth-child(4) { width: 310px; top: 82%; left: 64%; --cloud-duration: 92s; --cloud-scale: 1; filter: blur(1px); animation-delay: -16s; }
+ .layer-mid .cloud:nth-child(1) { width: 300px; top: 10%; left: 12%; --cloud-duration: 118s; --cloud-scale: 0.96; filter: blur(1.2px); animation-delay: -8s; }
+ .layer-mid .cloud:nth-child(2) { width: 320px; top: 28%; left: 46%; --cloud-duration: 112s; --cloud-scale: 1.02; filter: blur(1px); animation-delay: -22s; }
+ .layer-mid .cloud:nth-child(3) { width: 310px; top: 48%; left: 22%; --cloud-duration: 108s; --cloud-scale: 0.98; filter: blur(1px); animation-delay: -4s; }
+ .layer-mid .cloud:nth-child(4) { width: 300px; top: 68%; left: 68%; --cloud-duration: 110s; --cloud-scale: 1; filter: blur(1px); animation-delay: -16s; }
+ .layer-mid .cloud:nth-child(5) { width: 320px; top: 86%; left: 38%; --cloud-duration: 114s; --cloud-scale: 1; filter: blur(1px); animation-delay: -28s; }
 
-.layer-front .cloud:nth-child(1) { width: 380px; top: 18%; left: 6%; --cloud-duration: 82s; --cloud-scale: 1.02; animation-delay: -6s; }
-.layer-front .cloud:nth-child(2) { width: 420px; top: 40%; left: 30%; --cloud-duration: 76s; --cloud-scale: 1.06; animation-delay: -14s; }
-.layer-front .cloud:nth-child(3) { width: 390px; top: 62%; left: 70%; --cloud-duration: 74s; --cloud-scale: 1.04; animation-delay: -2s; }
-.layer-front .cloud:nth-child(4) { width: 360px; top: 84%; left: 34%; --cloud-duration: 78s; --cloud-scale: 1; animation-delay: -18s; }
+ .layer-front .cloud:nth-child(1) { width: 360px; top: 14%; left: 8%; --cloud-duration: 90s; --cloud-scale: 1.02; animation-delay: -6s; }
+ .layer-front .cloud:nth-child(2) { width: 400px; top: 32%; left: 28%; --cloud-duration: 86s; --cloud-scale: 1.06; animation-delay: -14s; }
+ .layer-front .cloud:nth-child(3) { width: 380px; top: 52%; left: 66%; --cloud-duration: 84s; --cloud-scale: 1.04; animation-delay: -2s; }
+ .layer-front .cloud:nth-child(4) { width: 360px; top: 72%; left: 16%; --cloud-duration: 88s; --cloud-scale: 1; animation-delay: -18s; }
+ .layer-front .cloud:nth-child(5) { width: 380px; top: 86%; left: 46%; --cloud-duration: 82s; --cloud-scale: 1.04; animation-delay: -24s; }
 
 .particles-container {
     position: absolute;
