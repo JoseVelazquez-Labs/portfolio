@@ -14,107 +14,57 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
             <div class="hero-background">
+            <div class="sky-haze"></div>
             <div class="sun-glow">
                 <span class="sun-core"></span>
                 <span class="sun-rays"></span>
             </div>
+
+            <svg class="cloud-defs" aria-hidden="true" focusable="false">
+                <defs>
+                    <linearGradient id="cloudGradient" x1="0%" y1="18%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
+                        <stop offset="58%" stop-color="#e8f4ff" stop-opacity="0.92" />
+                        <stop offset="100%" stop-color="#cfe4f7" stop-opacity="0.82" />
+                    </linearGradient>
+                    <linearGradient id="cloudShade" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#9cc8e4" stop-opacity="0.34" />
+                        <stop offset="100%" stop-color="#8dbad8" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="cloudHighlight" cx="36%" cy="34%" r="58%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
+                        <stop offset="68%" stop-color="#ffffff" stop-opacity="0.42" />
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                    </radialGradient>
+                    <symbol id="cloud-shape" viewBox="0 0 420 240">
+                        <path class="cloud-body" fill="url(#cloudGradient)" d="M104 172c0-34 28-62 62-62 10.4 0 20.4 2.4 29.5 6.9C205 73 243 50 286 50c43 0 80 30 88 70h13c30 0 54 24 54 54s-24 54-54 54H104c-33 0-60-25-60-56s27-56 60-56z" />
+                        <path class="cloud-highlight" fill="url(#cloudHighlight)" d="M124 148c0-22 18-40 40-40 6 0 12 1.4 17.5 3.8C198 92 232 72 270 72c34 0 62 24 68 56h10c24 0 44 18 44 40s-20 40-44 40H124c-22 0-40-18-40-40s18-40 40-40z" />
+                        <path class="cloud-shade" fill="url(#cloudShade)" d="M70 198c16-14 36-22 58-22h274c-10 24-36 40-62 40H120c-20 0-38-7-50-18z" />
+                        <path class="cloud-vapor" d="M-30 194c96-36 210-4 302 28 54 20 134 34 186 12" />
+                    </symbol>
+                </defs>
+            </svg>
+
             <div class="cloud-layer layer-back">
-                <svg class="cloud" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
-                    <defs>
-                        <linearGradient id="cloudGradient-back-1" x1="0%" y1="20%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.94" />
-                            <stop offset="60%" stop-color="#e9f6ff" stop-opacity="0.92" />
-                            <stop offset="100%" stop-color="#d8e9f7" stop-opacity="0.85" />
-                        </linearGradient>
-                        <linearGradient id="cloudShade-back-1" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#b7d7ed" stop-opacity="0.48" />
-                            <stop offset="100%" stop-color="#9fc7e1" stop-opacity="0.0" />
-                        </linearGradient>
-                        <radialGradient id="cloudHighlight-back-1" cx="32%" cy="36%" r="54%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-                            <stop offset="70%" stop-color="#ffffff" stop-opacity="0.35" />
-                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <path class="cloud-body" fill="url(#cloudGradient-back-1)" d="M86 134c0-26 21-46 47-46 8 0 16 1.8 23 5.3C164 61 193 44 224 44c33 0 61 23 67 54h10c23 0 42 19 42 42s-19 42-42 42H86c-24 0-44-19-44-42s20-42 44-42z" />
-                    <path class="cloud-highlight" fill="url(#cloudHighlight-back-1)" d="M98 122c0-16 14-30 30-30 5 0 9.8 1.2 14 3.2C148 74 169 60 192 60c25 0 46 17 50 40h8c18 0 32 14 32 32s-14 32-32 32H98c-16 0-30-14-30-32s14-32 30-32z" />
-                    <path class="cloud-shade" fill="url(#cloudShade-back-1)" d="M62 158c12-10 28-16 44-16h208c-8 18-26 30-46 30H100c-15 0-28-5-38-14z" />
-                    <path class="cloud-trail" d="M-44 150c54-14 112 0 166 20 32 12 74 20 116 6" />
-                </svg>
-                <svg class="cloud cloud-reverse" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
-                    <defs>
-                        <linearGradient id="cloudGradient-back-2" x1="0%" y1="20%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
-                            <stop offset="60%" stop-color="#e6f4ff" stop-opacity="0.9" />
-                            <stop offset="100%" stop-color="#d2e7f5" stop-opacity="0.82" />
-                        </linearGradient>
-                        <linearGradient id="cloudShade-back-2" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#a8cde6" stop-opacity="0.36" />
-                            <stop offset="100%" stop-color="#9ec6e0" stop-opacity="0" />
-                        </linearGradient>
-                        <radialGradient id="cloudHighlight-back-2" cx="38%" cy="38%" r="56%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
-                            <stop offset="72%" stop-color="#ffffff" stop-opacity="0.42" />
-                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <path class="cloud-body" fill="url(#cloudGradient-back-2)" d="M96 132c0-26 21-46 47-46 8 0 16 1.8 23 5.3C174 59 203 42 234 42c33 0 61 23 67 54h10c23 0 42 19 42 42s-19 42-42 42H96c-24 0-44-19-44-42s20-42 44-42z" />
-                    <path class="cloud-highlight" fill="url(#cloudHighlight-back-2)" d="M110 118c0-16 14-30 30-30 5 0 9.8 1.2 14 3.2C160 72 181 58 204 58c25 0 46 17 50 40h8c18 0 32 14 32 32s-14 32-32 32H110c-16 0-30-14-30-32s14-32 30-32z" />
-                    <path class="cloud-shade" fill="url(#cloudShade-back-2)" d="M74 156c12-10 28-16 44-16h208c-8 18-26 30-46 30H112c-15 0-28-5-38-14z" />
-                    <path class="cloud-trail" d="M-32 152c48-20 112-6 168 18 38 16 86 22 128 8" />
-                </svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
+            <div class="cloud-layer layer-mid">
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
             <div class="cloud-layer layer-front">
-                <svg class="cloud" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
-                    <defs>
-                        <linearGradient id="cloudGradient-front-1" x1="0%" y1="18%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
-                            <stop offset="60%" stop-color="#ecf7ff" stop-opacity="0.93" />
-                            <stop offset="100%" stop-color="#d7eafb" stop-opacity="0.86" />
-                        </linearGradient>
-                        <linearGradient id="cloudShade-front-1" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#b0d4ea" stop-opacity="0.34" />
-                            <stop offset="100%" stop-color="#a2cce5" stop-opacity="0" />
-                        </linearGradient>
-                        <radialGradient id="cloudHighlight-front-1" cx="34%" cy="34%" r="56%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.94" />
-                            <stop offset="68%" stop-color="#ffffff" stop-opacity="0.46" />
-                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <path class="cloud-body" fill="url(#cloudGradient-front-1)" d="M82 136c0-26 21-48 48-48 9 0 17 2 25 5.8C166 63 195 46 226 46c33 0 61 23 68 54h10c23 0 42 19 42 42s-19 42-42 42H82c-24 0-44-19-44-42s20-42 44-42z" />
-                    <path class="cloud-highlight" fill="url(#cloudHighlight-front-1)" d="M96 122c0-17 14-30 30-30 5.5 0 10.7 1.3 15.3 3.6C148 76 170 62 194 62c24 0 44 17 48 40h9c18 0 32 14 32 32s-14 32-32 32H96c-17 0-30-14-30-32s13-32 30-32z" />
-                    <path class="cloud-shade" fill="url(#cloudShade-front-1)" d="M60 160c12-10 28-16 44-16h210c-8 18-27 30-47 30H102c-15 0-28-5-38-14z" />
-                    <path class="cloud-trail" d="M-46 154c62-24 124-4 176 16 42 16 90 22 140 10" />
-                </svg>
-                <svg class="cloud cloud-reverse" viewBox="0 0 320 180" aria-hidden="true" focusable="false">
-                    <defs>
-                        <linearGradient id="cloudGradient-front-2" x1="0%" y1="18%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97" />
-                            <stop offset="60%" stop-color="#eaf6ff" stop-opacity="0.93" />
-                            <stop offset="100%" stop-color="#d3e8fa" stop-opacity="0.84" />
-                        </linearGradient>
-                        <linearGradient id="cloudShade-front-2" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#a7cde6" stop-opacity="0.36" />
-                            <stop offset="100%" stop-color="#9bc5df" stop-opacity="0" />
-                        </linearGradient>
-                        <radialGradient id="cloudHighlight-front-2" cx="34%" cy="38%" r="58%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.94" />
-                            <stop offset="70%" stop-color="#ffffff" stop-opacity="0.44" />
-                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <path class="cloud-body" fill="url(#cloudGradient-front-2)" d="M90 134c0-26 21-48 48-48 9 0 17 2 25 5.8C174 61 203 44 234 44c33 0 61 23 68 54h10c23 0 42 19 42 42s-19 42-42 42H90c-24 0-44-19-44-42s20-42 44-42z" />
-                    <path class="cloud-highlight" fill="url(#cloudHighlight-front-2)" d="M106 120c0-17 14-30 30-30 5.5 0 10.7 1.3 15.3 3.6C158 74 180 60 204 60c24 0 44 17 48 40h9c18 0 32 14 32 32s-14 32-32 32H106c-17 0-30-14-30-32s13-32 30-32z" />
-                    <path class="cloud-shade" fill="url(#cloudShade-front-2)" d="M68 158c12-10 28-16 44-16h210c-8 18-27 30-47 30H110c-15 0-28-5-38-14z" />
-                    <path class="cloud-trail" d="M-30 152c58-20 126-4 182 20 38 18 94 24 144 12" />
-                </svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
             </div>
+
+            <div class="particles-container" id="particles"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
