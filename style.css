@@ -703,6 +703,15 @@ p {
   display: block;
 }
 
+.tech-item img, .tech-item svg {
+  max-width: 28px;
+  max-height: 28px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .tech-item:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: var(--shadow-xl);
