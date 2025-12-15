@@ -13,14 +13,81 @@
 <body>
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-background">
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+            <div class="hero-background">
+            <div class="sky-haze"></div>
+            <div class="haze-overlay"></div>
+            <div class="sun-glow">
+                <span class="sun-core"></span>
+                <span class="sun-rays"></span>
             </div>
+
+            <svg class="cloud-defs" aria-hidden="true" focusable="false">
+                <defs>
+                    <radialGradient id="cloudCore" cx="42%" cy="40%" r="60%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
+                        <stop offset="55%" stop-color="#f5fbff" stop-opacity="0.9" />
+                        <stop offset="100%" stop-color="#d0e8fb" stop-opacity="0.6" />
+                    </radialGradient>
+                    <radialGradient id="cloudHalo" cx="50%" cy="55%" r="80%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+                        <stop offset="70%" stop-color="#b8e6ff" stop-opacity="0.08" />
+                        <stop offset="100%" stop-color="#9ed5f5" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="cloudShade" x1="50%" y1="20%" x2="50%" y2="100%">
+                        <stop offset="0%" stop-color="#b9d9f0" stop-opacity="0.38" />
+                        <stop offset="100%" stop-color="#7aa9cc" stop-opacity="0.05" />
+                    </linearGradient>
+                    <filter id="cloudBlur" x="-14%" y="-18%" width="128%" height="136%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <symbol id="cloud-shape" viewBox="0 0 360 200">
+                        <g class="cloud-shape">
+                            <g class="puff puff-1" transform="translate(24 48)">
+                                <ellipse class="cloud-puff" cx="86" cy="62" rx="82" ry="56" />
+                                <ellipse class="cloud-shade" cx="86" cy="86" rx="88" ry="44" />
+                            </g>
+                            <g class="puff puff-2" transform="translate(116 28)">
+                                <ellipse class="cloud-puff" cx="96" cy="72" rx="92" ry="66" />
+                                <ellipse class="cloud-shade" cx="94" cy="102" rx="102" ry="46" />
+                            </g>
+                            <g class="puff puff-3" transform="translate(186 52)">
+                                <ellipse class="cloud-puff" cx="86" cy="62" rx="78" ry="52" />
+                                <ellipse class="cloud-shade" cx="88" cy="90" rx="90" ry="42" />
+                            </g>
+                            <ellipse class="cloud-halo" cx="176" cy="110" rx="210" ry="92" />
+                            <ellipse class="cloud-mist" cx="186" cy="124" rx="240" ry="104" />
+                        </g>
+                    </symbol>
+                </defs>
+            </svg>
+
+            <div class="cloud-layer layer-back">
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-mid">
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-front">
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 360 200" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+
+            <div class="particles-container" id="particles"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
@@ -58,50 +125,50 @@
                     </button>
                 </div>
             </div>
-            <div class="hero-visual fade-in-delay">
-                <div class="floating-card">
-                    <div class="card-header">
-                        <div class="card-dots">
-                            <span></span>
+                <div class="hero-visual fade-in-delay">
+                    <div class="floating-card">
+                        <div class="card-header">
+                            <div class="card-dots">
+                                <span></span>
                             <span></span>
                             <span></span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="code-snippet">
-                            <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudComputing</span> {</div>
-                            <div class="code-line">  <span class="keyword">constructor</span>() {</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
-                            <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
-                            <div class="code-line">    ];</div>
-                            <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
-                            <div class="code-line">  }</div>
-                            <div class="code-line">}</div>
+                            <div class="code-snippet">
+                                <div class="code-line"><span class="keyword">class</span> <span class="class-name">CloudComputing</span> {</div>
+                                <div class="code-line">  <span class="keyword">constructor</span>() {</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">name</span> = <span class="string">'José Velázquez'</span>;</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">expertise</span> = [</div>
+                                <div class="code-line">      <span class="string">'AWS'</span>, <span class="string">'Docker'</span>, <span class="string">'Kubernetes'</span>, <span class="string">'Terraform'</span></div>
+                                <div class="code-line">    ];</div>
+                                <div class="code-line">    <span class="keyword">this</span>.<span class="property">passion</span> = <span class="string">'Cloud Solutions'</span>;</div>
+                                <div class="code-line">  }</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <div class="tech-item" data-tech="AWS">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Azure" title="Azure">
+                            <i class="devicon-azure-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Docker">
+                            <i class="devicon-docker-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Kubernetes">
+                            <i class="devicon-kubernetes-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Terraform" title="Terraform">
+                            <i class="devicon-terraform-plain"></i>
+                        </div>
+                        <div class="tech-item" data-tech="Linux" title="Linux">
+                            <i class="devicon-linux-plain"></i>
                         </div>
                     </div>
                 </div>
-                <div class="tech-stack">
-                    <div class="tech-item" data-tech="AWS">
-                        <i class="fab fa-aws"></i>
-                </div>
-                    <div class="tech-item" data-tech="Azure" title="Azure">
-                          <i class="devicon-azure-plain"></i>
-                    </div>
-                    <div class="tech-item" data-tech="Docker">
-                        <i class="devicon-docker-plain"></i>
-            </div>
-                    <div class="tech-item" data-tech="Kubernetes">
-                        <i class="devicon-kubernetes-plain"></i>
-                </div>
-                    <div class="tech-item" data-tech="Terraform" title="Terraform">
-                          <i class="devicon-terraform-plain"></i>
-                    </div>
-                     <div class="tech-item" data-tech="Linux" title="Linux">
-                          <i class="devicon-linux-plain"></i>
-                  </div>
-                </div>
-            </div>
         </div>
         <div class="scroll-indicator" onclick="scrollToSection('projects')">
             <div class="scroll-text">Desliza para explorar</div>
@@ -116,6 +183,46 @@
 
 
     <!-- Projects Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Sobre mí</span>
+                </div>
+                <h2 class="section-title">Plataformas fiables orientadas al negocio</h2>
+                <p class="section-subtitle">Me muevo entre la operación diaria y la ingeniería de plataforma: estandarizo, automatizo y observo para que las aplicaciones escalen sin fricciones.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Operación 24/7</h3>
+                    <p>Gestión de entornos críticos en Linux y Windows con foco en fiabilidad, parchado y continuidad.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Automatización</h3>
+                    <p>Diseño pipelines y scripts para reducir tareas manuales, alineando seguridad y cumplimiento.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad aplicativa</h3>
+                    <p>Controlo accesos con IAM, identidades federadas y segmentación de redes en entornos híbridos.</p>
+                </div>
+            </div>
+
+            <div class="skill-badges">
+                <span class="badge">Cloud híbrido (AWS + Azure)</span>
+                <span class="badge">Infraestructura como código</span>
+                <span class="badge">Containers & Kubernetes</span>
+                <span class="badge">Observabilidad con Grafana Stack</span>
+                <span class="badge">Gobernanza multi cuenta</span>
+                <span class="badge">Resiliencia y cost optimization</span>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
