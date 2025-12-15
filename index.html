@@ -13,14 +13,62 @@
 <body>
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-background">
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+            <div class="hero-background">
+            <div class="sky-haze"></div>
+            <div class="haze-overlay"></div>
+            <div class="sun-glow">
+                <span class="sun-core"></span>
+                <span class="sun-rays"></span>
             </div>
+
+            <svg class="cloud-defs" aria-hidden="true" focusable="false">
+                <defs>
+                    <linearGradient id="cloudGradient" x1="0%" y1="18%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98" />
+                        <stop offset="58%" stop-color="#e8f4ff" stop-opacity="0.92" />
+                        <stop offset="100%" stop-color="#cfe4f7" stop-opacity="0.82" />
+                    </linearGradient>
+                    <linearGradient id="cloudShade" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#9cc8e4" stop-opacity="0.34" />
+                        <stop offset="100%" stop-color="#8dbad8" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="cloudHighlight" cx="36%" cy="34%" r="58%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
+                        <stop offset="68%" stop-color="#ffffff" stop-opacity="0.42" />
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                    </radialGradient>
+                    <symbol id="cloud-shape" viewBox="0 0 420 240">
+                        <path class="cloud-body" fill="url(#cloudGradient)" d="M104 172c0-34 28-62 62-62 10.4 0 20.4 2.4 29.5 6.9C205 73 243 50 286 50c43 0 80 30 88 70h13c30 0 54 24 54 54s-24 54-54 54H104c-33 0-60-25-60-56s27-56 60-56z" />
+                        <path class="cloud-highlight" fill="url(#cloudHighlight)" d="M124 148c0-22 18-40 40-40 6 0 12 1.4 17.5 3.8C198 92 232 72 270 72c34 0 62 24 68 56h10c24 0 44 18 44 40s-20 40-44 40H124c-22 0-40-18-40-40s18-40 40-40z" />
+                        <path class="cloud-shade" fill="url(#cloudShade)" d="M70 198c16-14 36-22 58-22h274c-10 24-36 40-62 40H120c-20 0-38-7-50-18z" />
+                        <path class="cloud-vapor" d="M-30 194c96-36 210-4 302 28 54 20 134 34 186 12" />
+                    </symbol>
+                </defs>
+            </svg>
+
+            <div class="cloud-layer layer-back">
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-mid">
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+            <div class="cloud-layer layer-front">
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud reverse" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+                <svg class="cloud" viewBox="0 0 420 240" aria-hidden="true" focusable="false"><use href="#cloud-shape" /></svg>
+            </div>
+
+            <div class="particles-container" id="particles"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
@@ -116,6 +164,46 @@
 
 
     <!-- Projects Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Sobre mí</span>
+                </div>
+                <h2 class="section-title">Plataformas fiables orientadas al negocio</h2>
+                <p class="section-subtitle">Me muevo entre la operación diaria y la ingeniería de plataforma: estandarizo, automatizo y observo para que las aplicaciones escalen sin fricciones.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Operación 24/7</h3>
+                    <p>Gestión de entornos críticos en Linux y Windows con foco en fiabilidad, parchado y continuidad.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Automatización</h3>
+                    <p>Diseño pipelines y scripts para reducir tareas manuales, alineando seguridad y cumplimiento.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad aplicativa</h3>
+                    <p>Controlo accesos con IAM, identidades federadas y segmentación de redes en entornos híbridos.</p>
+                </div>
+            </div>
+
+            <div class="skill-badges">
+                <span class="badge">Cloud híbrido (AWS + Azure)</span>
+                <span class="badge">Infraestructura como código</span>
+                <span class="badge">Containers & Kubernetes</span>
+                <span class="badge">Observabilidad con Grafana Stack</span>
+                <span class="badge">Gobernanza multi cuenta</span>
+                <span class="badge">Resiliencia y cost optimization</span>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
