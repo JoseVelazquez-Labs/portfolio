@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeParticles();
     initializeTechStack();
     initializeScrollAnimations();
+    initializeHeroReveal();
 });
 
 // Load projects into the grid
@@ -339,6 +340,23 @@ function initializeScrollAnimations() {
     }, { threshold: 0.1 });
     
     scrollElements.forEach(el => scrollObserver.observe(el));
+}
+
+// Hero sunrise reveal
+function initializeHeroReveal() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        document.body.classList.add('is-loaded');
+        return;
+    }
+
+    // Use a tiny delay to ensure initial styles render before the reveal starts
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            document.body.classList.add('is-loaded');
+        }, 50);
+    });
 }
 
 // Add CSS for notifications
