@@ -21,105 +21,69 @@
                 <span class="sun-rays"></span>
             </div>
 
-            <svg class="cloud-defs" aria-hidden="true" focusable="false">
-                <defs>
-                    <radialGradient id="cloudCore" cx="50%" cy="42%" r="70%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-                        <stop offset="48%" stop-color="#ffffff" stop-opacity="0.98" />
-                        <stop offset="100%" stop-color="#f8fcff" stop-opacity="0.88" />
-                    </radialGradient>
-                    <radialGradient id="cloudHalo" cx="48%" cy="60%" r="100%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
-                        <stop offset="70%" stop-color="#f7fbff" stop-opacity="0.16" />
-                        <stop offset="100%" stop-color="#f0f8ff" stop-opacity="0" />
-                    </radialGradient>
-                    <radialGradient id="cloudShade" cx="46%" cy="58%" r="70%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
-                        <stop offset="100%" stop-color="#f2f8ff" stop-opacity="0.08" />
-                    </radialGradient>
-                    <filter id="cloudBlur" x="-18%" y="-18%" width="136%" height="136%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-                        <feMerge>
-                            <feMergeNode in="blur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                    <filter id="cloudFeather" x="-25%" y="-25%" width="150%" height="150%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-                    </filter>
-                    <symbol id="cloud-shape" viewBox="0 0 420 240" preserveAspectRatio="xMidYMid meet">
-                        <g class="cloud-shape">
-                            <path class="cloud-base" d="M126 192h166c43 0 78-31 78-70 0-30-20-57-50-66-5-31-36-56-74-56-28 0-54 14-66 36-8-4-17-6-26-6-35 0-64 25-64 58 0 5 0 10 2 15-27 9-46 33-46 62 0 29 24 52 56 52z" />
-                            <path class="cloud-highlight" d="M140 154c-14 0-26-8-31-21-3-7-4-14-4-21 0-30 23-55 55-55 9 0 18 2 26 5 3-20 19-36 40-40 28-6 55 12 61 40 1 5 2 10 2 15 18 0 34 11 39 27 6 17-2 36-17 45-10 6-22 9-33 9H140z" />
-                            <ellipse class="cloud-fog" cx="210" cy="188" rx="212" ry="60" />
-                        </g>
-                    </symbol>
-                </defs>
-            </svg>
-
             <div class="cloud-layer layer-back">
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="fab fa-aws"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-azure-plain"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-docker-plain"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-kubernetes-plain"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-terraform-plain"></i></div>
                 </div>
             </div>
             <div class="cloud-layer layer-mid">
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-linux-plain"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="fab fa-aws"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-azure-plain"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-docker-plain"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-kubernetes-plain"></i></div>
                 </div>
             </div>
             <div class="cloud-layer layer-front">
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-terraform-plain"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-linux-plain"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="fab fa-aws"></i></div>
                 </div>
                 <div class="cloud reverse" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-azure-plain"></i></div>
                 </div>
                 <div class="cloud" aria-hidden="true">
-                    <svg viewBox="0 0 420 240" focusable="false"><use href="#cloud-shape" /></svg>
+                    <div class="cloud-shape"></div>
                     <div class="cloud-logo"><i class="devicon-docker-plain"></i></div>
                 </div>
             </div>
