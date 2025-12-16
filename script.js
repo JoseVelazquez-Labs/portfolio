@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeParticles();
     initializeTechStack();
     initializeScrollAnimations();
+    initializeHeroReveal();
 });
 
 // Load projects into the grid
@@ -270,22 +271,34 @@ function showNotification(message, type = 'info') {
 // Initialize particles
 function initializeParticles() {
     if (!particlesContainer) return;
-    
-    const particleCount = 50;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        particlesContainer.style.display = 'none';
+        return;
+    }
+
+    const particleCount = 30;
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
+        const size = Math.random() * 5 + 3;
+        const opacity = Math.random() * 0.25 + 0.1;
+        const duration = Math.random() * 12 + 10;
+        const delay = Math.random() * 8;
+
         particle.style.cssText = `
             position: absolute;
-            width: ${Math.random() * 4 + 2}px;
-            height: ${Math.random() * 4 + 2}px;
-            background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
+            width: ${size}px;
+            height: ${size * 0.65}px;
+            background: rgba(255, 255, 255, ${opacity});
             border-radius: 50%;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
-            animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
-            animation-delay: ${Math.random() * 5}s;
+            filter: blur(1px);
+            animation: cloudFloat ${duration}s ease-in-out infinite;
+            animation-delay: ${delay}s;
         `;
         particlesContainer.appendChild(particle);
     }
@@ -327,6 +340,23 @@ function initializeScrollAnimations() {
     }, { threshold: 0.1 });
     
     scrollElements.forEach(el => scrollObserver.observe(el));
+}
+
+// Hero sunrise reveal
+function initializeHeroReveal() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        document.body.classList.add('is-loaded');
+        return;
+    }
+
+    // Use a tiny delay to ensure initial styles render before the reveal starts
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            document.body.classList.add('is-loaded');
+        }, 50);
+    });
 }
 
 // Add CSS for notifications
